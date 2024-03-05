@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactGA4 from 'react-ga4';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Home2 from './Home2';
 
 const initializeGA4 = async () => {
   const measurementId = 'G-J3YJQ8NNE9';
@@ -15,18 +18,14 @@ const App = () => {
     initializeGA4();
   }, []);
 
-  const handleClick = () => {
-    ReactGA4.event({
-      action: 'button_clicked',
-      category: 'User Interaction',
-      label: 'My Button Label',
-    });
-  };
-
   return (
-    <div>
-      <button onClick={handleClick}>Click Me</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/home2' element={<Home2/>}></Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 };
 
