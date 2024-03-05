@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA4 from 'react-ga4';
 
 const initializeGA4 = async () => {
-  const measurementId = '64657498';
+  const measurementId = 'G-J3YJQ8NNE9';
   try {
     await ReactGA4.initialize(measurementId);
   } catch (error) {
